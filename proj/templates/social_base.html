@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_title|default:"Ultimate Social" }} · Ultimate Social</title>
+  {% load static %}
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/social.css' %}" rel="stylesheet">
+</head>
+<body class="social-app">
+  <header class="social-header">
+    <a class="social-brand" href="{% url 'index' %}"><span class="brand-mark"><i class="bi bi-share-fill"></i></span><span>Ultimate Social</span></a>
+    <button class="sidebar-toggle" type="button" aria-label="Toggle navigation" aria-controls="social-sidebar"><i class="bi bi-list"></i></button>
+    <div class="header-spacer"></div>
+    <button class="header-icon" type="button" aria-label="Notifications"><i class="bi bi-bell"></i></button>
+    <div class="profile-chip"><span class="profile-avatar">JD</span><span class="profile-name">Jordan Davis</span><i class="bi bi-chevron-down"></i></div>
+  </header>
+  <div class="sidebar-scrim" data-sidebar-close></div>
+  <aside class="social-sidebar" id="social-sidebar">
+    <div class="sidebar-label">WORKSPACE</div>
+    <nav aria-label="Main navigation">
+      <a class="sidebar-link {% if active_page == 'dashboard' %}active{% endif %}" href="{% url 'index' %}"><i class="bi bi-grid-1x2"></i><span>Dashboard</span></a>
+      <a class="sidebar-link {% if active_page == 'accounts' %}active{% endif %}" href="{% url 'social_accounts' %}"><i class="bi bi-person-lines-fill"></i><span>Social Accounts</span></a>
+      <a class="sidebar-link {% if active_page == 'posts' %}active{% endif %}" href="{% url 'posts' %}"><i class="bi bi-file-earmark-text"></i><span>Posts</span><span class="nav-count">8</span></a>
+      <a class="sidebar-link {% if active_page == 'schedule' %}active{% endif %}" href="{% url 'schedule' %}"><i class="bi bi-calendar3"></i><span>Schedule</span></a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="sidebar-label">PREFERENCES</div>
+      <a class="sidebar-link" href="{% url 'usr_profile' %}"><i class="bi bi-gear"></i><span>Settings</span></a>
+      <div class="plan-card"><span class="plan-icon"><i class="bi bi-stars"></i></span><strong>Make more of social</strong><p>Connect your channels and plan your next great post.</p><a href="{% url 'social_accounts' %}">Connect accounts <i class="bi bi-arrow-right"></i></a></div>
+    </div>
+  </aside>
+  <main class="social-main">
+    {% block content %}{% endblock %}
+  </main>
+  <div class="connect-toast" role="status" aria-live="polite"></div>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/js/social.js' %}"></script>
+  {% block page_scripts %}{% endblock %}
+</body>
+</html>

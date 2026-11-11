@@ -1,0 +1,19 @@
+{% extends "social_base.html" %}
+{% block content %}
+<div class="page-heading">
+  <div><div class="eyebrow">YOUR WORKSPACE</div><h1>Social accounts</h1><p>Connect the channels you use to share and grow your audience.</p></div>
+  <div class="heading-actions"><span class="connected-total"><i class="bi bi-check-circle-fill"></i> 0 connected</span></div>
+</div>
+<div class="content-card accounts-card">
+  <div class="section-heading"><div><h2>Available platforms</h2><p>Choose a platform to connect it to your workspace.</p></div><span class="platform-total">5 platforms</span></div>
+  <div class="platform-grid">
+    {% for platform in platforms %}
+    <article class="platform-card">
+      <div class="platform-logo {{ platform.color }}"><i class="{{ platform.icon }}"></i></div>
+      <div class="platform-copy"><h3>{{ platform.name }}</h3><p>{{ platform.description }}</p></div>
+      <button class="connect-button" type="button" data-platform="{{ platform.name }}"><i class="bi bi-plus-lg"></i> Connect</button>
+    </article>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

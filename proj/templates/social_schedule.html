@@ -1,0 +1,14 @@
+{% extends "social_base.html" %}
+{% load static %}
+{% block content %}
+<div class="page-heading">
+  <div><div class="eyebrow">PLANNING</div><h1>Schedule</h1><p>Plan and preview your upcoming posts in one place.</p></div>
+  <a class="primary-button" href="{% url 'posts' %}"><i class="bi bi-plus-lg"></i> Create a post</a>
+</div>
+<div class="content-card calendar-card">
+  <div class="calendar-toolbar"><div><h2 id="calendar-month">November 2026</h2><span class="calendar-caption">Your publishing calendar</span></div><div class="calendar-controls"><button class="calendar-arrow" data-calendar-step="-1" aria-label="Previous month"><i class="bi bi-chevron-left"></i></button><button class="today-button" data-calendar-today>Today</button><button class="calendar-arrow" data-calendar-step="1" aria-label="Next month"><i class="bi bi-chevron-right"></i></button><label class="calendar-view"><i class="bi bi-calendar3"></i><select aria-label="Calendar view"><option>Month</option><option>Week</option></select><i class="bi bi-chevron-down"></i></label></div></div>
+  <div class="calendar-grid" id="calendar-grid" aria-label="Publishing calendar"></div>
+  <div class="calendar-legend"><span><i class="legend-dot messenger-dot"></i> Messenger</span><span><i class="legend-dot telegram-dot"></i> Telegram</span><span><i class="legend-dot x-dot"></i> Twitter</span><span><i class="legend-dot whatsapp-dot"></i> WhatsApp</span></div>
+</div>
+{% endblock %}
+{% block page_scripts %}<script src="{% static 'assets/js/calendar.js' %}"></script>{% endblock %}

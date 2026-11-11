@@ -1,0 +1,22 @@
+{% extends "social_base.html" %}
+{% load static %}
+{% block content %}
+<div class="page-heading">
+  <div><div class="eyebrow">PUBLISHING</div><h1>Posts</h1><p>Keep track of what’s ready, scheduled, and already published.</p></div>
+  <a class="primary-button" href="{% url 'schedule' %}"><i class="bi bi-plus-lg"></i> Create a post</a>
+</div>
+<div class="stats-grid">
+  <div class="stat-card"><span class="stat-icon indigo"><i class="bi bi-calendar2-check"></i></span><div><span>Scheduled</span><strong>8</strong></div><span class="stat-note">ready to publish</span></div>
+  <div class="stat-card"><span class="stat-icon green"><i class="bi bi-check2-circle"></i></span><div><span>Published this month</span><strong>24</strong></div><span class="stat-note positive"><i class="bi bi-arrow-up-right"></i> 12% this month</span></div>
+  <div class="stat-card"><span class="stat-icon amber"><i class="bi bi-pencil-square"></i></span><div><span>Drafts</span><strong>3</strong></div><span class="stat-note">waiting for your touch</span></div>
+</div>
+<div class="content-card posts-card">
+  <div class="section-heading posts-heading"><div><h2>Upcoming posts</h2><p>Your scheduled content across connected platforms.</p></div><div class="filter-select"><i class="bi bi-funnel"></i><select aria-label="Filter posts"><option>All platforms</option><option>Messenger</option><option>Twitter</option><option>WhatsApp</option><option>Email</option><option>Telegram</option></select><i class="bi bi-chevron-down"></i></div></div>
+  <div class="table-responsive"><table class="posts-table"><thead><tr><th>IMAGE</th><th>PLATFORM</th><th>POST</th><th>SCHEDULED DATE</th><th></th></tr></thead><tbody>
+  {% for post in posts %}
+  <tr><td><div class="post-thumbnail"><img src="{% static post.image %}" alt=""></div></td><td><span class="post-platform {{ post.platform_color }}"><i class="{{ post.platform_icon }}"></i>{{ post.platform }}</span></td><td><div class="post-preview"><div><strong>{{ post.title }}</strong><span>{{ post.description }}</span></div></div></td><td><div class="schedule-time">{{ post.day }}<span>{{ post.time }}</span></div></td><td><button class="more-button" aria-label="More options for {{ post.title }}"><i class="bi bi-three-dots"></i></button></td></tr>
+  {% endfor %}
+  </tbody></table></div>
+  <div class="table-footer"><span>Showing 5 of 8 scheduled posts</span><a href="{% url 'schedule' %}">View schedule <i class="bi bi-arrow-right"></i></a></div>
+</div>
+{% endblock %}

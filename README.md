@@ -1,84 +1,29 @@
-# **Ultimate Social**
+# Ultimate Social
 
-Ultimate social is the ultimate social bridge between Web2 and Web3 social media: see, post repurpose, analyze, and engage from one single place. 
+### One workspace for the way you show up online.
 
-[list features in bullet points]
+Keeping up with social media can mean jumping between platforms just to plan what to say and when to say it. Ultimate Social is an open-source social media management project exploring a simpler approach: bring your channels, posts, and publishing schedule together in one clear workspace.
 
-[insert screenshot of UI]
+Built with Django, Python, and Bootstrap, Ultimate Social is designed to grow into a practical bridge between Web2 and Web3 social media. The current app provides an early look at its dashboard, social account directory, upcoming posts, and calendar experience. It is a starting point for a more connected way to organize social content, coordinate publishing, and make room for meaningful conversations across platforms.
 
-[insert link to production instance]
+Whether you are a creator planning your next post, a community manager juggling several channels, or a developer interested in open-source social media tools, there is room to help shape what comes next. Explore the interface, share ideas, improve the experience, or contribute code.
 
-## Tech Stack
+## Get started
 
+1. Install Python and pip, then clone this repository.
+2. Install dependencies with `pip install -r requirements.txt`.
+3. Apply database migrations with `python proj/manage.py migrate`.
+4. Start the development server with `python proj/manage.py runserver`.
+5. Open [http://localhost:8000](http://localhost:8000).
 
-### **Client**
-- Bootstrap
+## Contribute
 
-### **Server**
-- Python
-- Django
+Issues, ideas, design improvements, documentation, and code contributions are welcome. Open an issue to discuss a change or submit a pull request. Please keep contributions focused, clear, and helpful to new users.
 
-**Status:** 0.01 “link to changelog”
+## Project status
 
-# Usage
+Ultimate Social is an early-stage project. The current screens use sample content; platform authorization, publishing integrations, and persistent post management are not implemented yet.
 
-Show users how to use the software. Be specific. Use appropriate formatting when showing code snippets.****
+## License
 
-# Dependencies
-
-Python & Pip
-
-## Steps to contribute 
-
-# Getting involved
-
-# **Installation**
-
-1. Clone the repo and CD into the directory
-2. Install dependncies using `pip install -r requirements.txt` (you can create virtual env if you want to)
-3. Run migration `python proj/manage.py migrate`
-4. Run the local server `python proj/manage.py runserver 0.0.0.0:8000`
-
-**What Now?**
-
-Open [localhost:8000](http://localhost:8000) in your browser. You can do any code change in your editor and it will get reflected in the browser.
-
-
-# Environment Variables
-
-# Known Issues
-
-No Known Issues at the moment***
-
-# Getting help
-
-
-- Submit your Issues on GitHub with the relevant tags/labels
-- Join the [waitlist] (https://www.notion.so/pooriaarab/Ultimate-Social-e7aabb982c4342c69ca10e11871164ed) 
-- Review the extensive documentation in “Ultimate Social Docs”. Make sure to select the correct version. 
-- Please use “Ultimate Social Reddit” for quick answers to your questions. 
-
-# **Important links & Docs**
-
-# **Feedback**
-
-# **Roadmap**
-
-# **Contributors ✨**
-
-Thanks to these wonderful people for contributing:
-
-This project follows “all-contirbutors” specification. Contributions of any kind welcome
-
-# **License**
-
-Licensed under the Apache License, Version 2.0. Copyright 2022 BeeHouse Foundation “Copy of the license”. 
-
-# Used by
-
-This project is used by the following companies: 
-[BeeHouse DAO](https://house.beeloud.xyz) 
-
-# Credits and references
-
-
+This repository is distributed under the GPL-3.0 license. See [LICENSE](LICENSE) for details.
